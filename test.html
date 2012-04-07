@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="plugins/flexi/themes.css"rel="stylesheet" type="text/css"/>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+        .cp-default {
+            position: absolute;
+            top: 50px;
+            left: 5px;
+            box-shadow: -4px -4px 2px #555;
+        }
+    </style>
+    
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="plugins/flexi/colorpicker.min.js"></script>
+    
+    <script>
+    function log(s) {console.log(s);}
+    $(document).ready(function() {
+        var slide, picker, slideIndicator, pickerIndicator,
+            c, i, len, divs = document.getElementsByTagName('*');
+
+        for (i = 0, len = divs.length; i < len; i++) {
+            switch (divs[i].className) {
+                case 'slide': slide = divs[i]; break;
+                case 'picker': picker = divs[i]; break;
+                case 'slide-indicator': slideIndicator = divs[i]; break;
+                case 'picker-indicator': pickerIndicator = divs[i]; break;
+            }
+        }
+        log("slide: "); log(slide); log("picker: "); log(picker);
+        c = ColorPicker(slide, picker);
+        
+        c.callback = function(hex, hsv, rgb, mousePicker, mouseSlide) {
+            ColorPicker.positionIndicators(
+                slideIndicator, pickerIndicator,
+                mouseSlide, mousePicker
+            );
+            $("#trigger").css("background-color", hex);
+            //document.body.style.backgroundColor = hex;
+        };
+    });
+
+    </script>
+  </head>
+  <body>
+    
+    <div class="cp-default">
+        <div class="picker-wrapper">
+            <div class="picker"></div>
+            <div class="picker-indicator"></div>
+        </div>
+        <div class="slide-wrapper">
+            <div class="slide"></div>
+            <div class="slide-indicator"></div>
+        </div>
+    </div>
+    
+    <div id="trigger"></div>
+  </body>
+</html>
