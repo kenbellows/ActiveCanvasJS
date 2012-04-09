@@ -25,7 +25,7 @@
      height: 100%;
      width:  100%;
     }
-.trigger {
+#trigger {
      height: 30px;
      width:  30px;
      background-color: #00EECC;
