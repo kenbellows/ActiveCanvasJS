@@ -23,7 +23,7 @@
 	    position: absolute;
 	    z-index: 10;
 	}
-	.trigger {
+	.colortrigger {
 	    position: absolute;
 	    z-index: 8;
 	}
@@ -36,18 +36,21 @@
     
     <script>
     function log(s) {console.log(s);}
-    $(document).ready(function() {
-        var slide, picker, slideIndicator, pickerIndicator,
-            c, i, len, divs = document.getElementsByTagName('*'),
+    var c, slide, picker, slideIndicator, pickerIndicator,
+            i, len, divs = document.getElementsByTagName('*'),
 	    current_target, left=5;
-
+    $(document).ready(function() {
+        /*var slide, picker, slideIndicator, pickerIndicator,
+            i, c, len, divs = document.getElementsByTagName('*'),
+	    current_target, left=5;
+	*/
         for (i = 0, len = divs.length; i < len; i++) {
             switch (divs[i].className) {
                 case 'slide': slide = divs[i]; break;
                 case 'picker': picker = divs[i]; break;
                 case 'slide-indicator': slideIndicator = divs[i]; break;
                 case 'picker-indicator': pickerIndicator = divs[i]; break;
-		case 'trigger': $(divs[i]).css('left', left); left += 50; break;
+		case 'colortrigger': $(divs[i]).css('left', left); left += 50; break;
             }
         }
         //log("slide: "); log(slide); log("picker: "); log(picker);
@@ -63,7 +66,10 @@
         };
 	
 	$("#cp-wrapper").hide();
-	$(".trigger").click(function(event) {
+	$(".colortrigger").click(function(event) {
+	    var bgcolor = $(this).css("background-color"),
+		hsv = RGB2HSV(hex2RGB(bgcolor));
+	    c.h = hsv.h, c.s = hsv.s, c.v = hsv.v;
 	    $("#cp-wrapper").css("left",event.pageX)
                             .css("top" ,event.pageY);
             current_target = $(this);
@@ -87,8 +93,8 @@
         </div>
     </div>
     
-    <div class="trigger"></div>
-    <div class="trigger"></div>
-    <div class="trigger"></div>
+    <div class="colortrigger"></div>
+    <div class="colortrigger"></div>
+    <div class="colortrigger"></div>
   </body>
 </html>

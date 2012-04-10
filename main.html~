@@ -27,20 +27,5 @@
     </div>
     <div id="slider"></div>
     <div id="word-wrapper">Word: <span id="word"></span></div>
-
-    <div id="background"></div>
-    <div id="cp-wrapper" class="cp-default">
-        <div class="picker-wrapper">
-            <div class="picker"></div>
-            <div class="picker-indicator"></div>
-        </div>
-        <div class="slide-wrapper">
-            <div class="slide"></div>
-            <div class="slide-indicator"></div>
-        </div>
-    </div>
-    
-    
-    
   </body>
 </html>
