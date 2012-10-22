@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style type="text/css">
+            /*styling here*/
+        </style>
+        <script type="text/javascript">
+            //functions here
+        </script>
+    </head>
+    <body>
+        <!--page elements-->
+    </body>
+</html>

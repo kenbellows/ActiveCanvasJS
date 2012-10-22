@@ -3,63 +3,67 @@
       width:     300px;
       height:    10px;
       position:  absolute;
-    }
+      z-index:   15;
+}
 #input  { 
       font-size: 13px; 
-    }
+}
 #canvasdiv {
-      width:    300px;
-      height:   300px;
+      width:    40%;
+      height:   90%;
       position: absolute;
-      left:     10px;
-      top:      30px;
-    }
+      left:     10%;
+      top:      5%;
+      z-index:  10;
+}
 #scriptdiv {
-      width:    99%;
-      height:   200px;
+      width:    40%;
+      height:   90%;
       position: absolute;
-      left:     0.5%;
-      bottom:   10px;
-    }
+      left:     50%;
+      top:      5%;
+      z-index:  10;
+}
 #script {
-      height: 100%;
-      width:  100%;
-    }
+      height:   100%;
+      width:    100%;
+}
 #palette {
-      position:absolute;
-      left:0px;
-      top:0px;
-      width:200px;
-    }
-#colorslide {
-      position:absolute;
-      left:200px;
-      top:0px;
-    }
-.colortrigger {
-      height: 30px;
-      width:  30px;
-      background-color: #00EECC;
       position: absolute;
-      z-index: 8;
-    }
+      left:     0px;
+      top:      0px;
+      width:    200px;
+}
+#colorslide {
+      position: absolute;
+      left:     200px;
+      top:      0px;
+      z-index:  15;
+}
+.colortrigger {
+      height:           30px;
+      width:            30px;
+      background-color: #00EECC;
+      position:         absolute;
+      z-index:          8;
+}
     
 .cp-default {
-      position: absolute;
-      top: 50px;
-      left: 5px;
-      box-shadow: -4px -4px 2px #555;
-    }
+      position:     absolute;
+      top:          50px;
+      left:         5px;
+      box-shadow:   -4px -4px 2px #555;
+}
 #background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0px;
-    top:0px;
-    z-index:1;
-    background-color: #FFFFFF;
+    width:              100%;
+    height:             100%;
+    position:           absolute;
+    left:               0px;
+    top:                0px;
+    z-index:            1;
+    background-color:   #FFFFFF;
 }
 #cp-wrapper {
-    position: absolute;
-    z-index: 10;
+    position:    absolute;
+    z-index:    10;
 }

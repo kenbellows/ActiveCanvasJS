@@ -27,7 +27,12 @@
 
 
 $(document).ready(function(){
-    $("#script").html("var cssobj = {\n\t\t'width':'300px',\n\t\t'height':'300px',\n\t\t'background-color':'#CCEEFF',\n\t};\n$('#canvasdiv').css(cssobj);");
+    $("#script").html("var cssobj = {" +
+                    "\n        'width':'300px', " +
+                    "\n        'height':'300px'," +
+                    "\n        'background-color':'#CCEEFF'" +
+                    "\n    };" +
+                    "\n$('#canvasdiv').css(cssobj);");
     evalScript("#script");
     $("#script").monitor(function(){
       evalScript("#script");

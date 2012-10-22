@@ -18,8 +18,10 @@ $(document).ready(function() {
 
     // Main slider function
     $('#script').click(function(event) {
+        log("script click");
         var _this = $(this);
         if (event.ctrlKey) {
+            log("\tcontrol was pressed");
             var pos   = getInputSelection(this)["start"],
                 word  = getWordFromPos(_this.val(), pos),
                 value = splitNum(word);
@@ -28,38 +30,37 @@ $(document).ready(function() {
             $("#word").html((value == "NaN" ? word : value[1]));
         
             if (value != "NaN") {
-                numSlider(pos, value, _this);
+                //numSlider(pos, value, _this);
 		
-		/*
-		var newpos = pos + value[0].length,
+                
+                var newpos = pos + value[0].length,
                     numlen = value[1].toString().length;
                 $("#slider")
-                    // Position slider above number
-                    .css("top",   (event.pageY-40 ).toString() + "px")
-                    .css("left",  (event.pageX-210).toString() + "px")
-                    .css("width", "400px")
-                    // Set slider values to reflect the number
-                    .slider("option", {
-                        "min"   :  value[1] - 100,
-                        "max"   :  value[1] + 100,
-                        "value" :  value[1]
-                    })
-                    // Show the slider
-                    .show()
-                    // Define what happens when the slider slides
-                    .bind("slide", function(ev, ui) {
-                        // Modify the number in place and update the length of the number
-                        var val = ui.value,
-                            currval = _this.val().split(""),
-                            maxval = $(this).slider("option", "max"),
-                            minval = $(this).slider("option", "min"),
-                            slideX = (parseInt($("#slider").css("width"))/(maxval-minval)) * (val-minval) + parseInt($("#slider").css("left"));
-                        $("#word").html(val);
-                        currval.splice(newpos, numlen, val);
-                        _this.val(currval.join(""));
-                        numlen = val.toString().length;
-                    });
-		*/
+                // Position slider above number
+                .css("top",   (event.pageY-40 ).toString() + "px")
+                .css("left",  (event.pageX-210).toString() + "px")
+                .css("width", "400px")
+                // Set slider values to reflect the number
+                .slider("option", {
+                    "min"   :  value[1] - 100,
+                    "max"   :  value[1] + 100,
+                    "value" :  value[1]
+                })
+                // Show the slider
+                .show()
+                // Define what happens when the slider slides
+                .bind("slide", function(ev, ui) {
+                    // Modify the number in place and update the length of the number
+                    var val = ui.value,
+                        currval = _this.val().split(""),
+                        maxval = $(this).slider("option", "max"),
+                        minval = $(this).slider("option", "min"),
+                        slideX = (parseInt($("#slider").css("width"))/(maxval-minval)) * (val-minval) + parseInt($("#slider").css("left"));
+                    $("#word").html(val);
+                    currval.splice(newpos, numlen, val);
+                    _this.val(currval.join(""));
+                    numlen = val.toString().length;
+                });
             }
         }
         else {
