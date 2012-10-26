@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            #textarea {
+                position:           absolute;
+                top:                50px;
+                left:               200px;
+                width:              1200px;
+                height:             800px;
+                border:             1px solid black;
+            }
+            #textarea_linenumbers {
+                position:           absolute;
+                left:               0px;
+                top:                0px;
+                background-color:   #BCD4E6;
+                width:              100px;
+                height:             100%;
+            }
+            #textarea_linenumbers_lightblue {
+                position:           absolute;
+                left:               80px;
+                top:                0px;
+                background-color:   #E8E8FF;
+                width:              20px;
+                height:             100%;
+            }
+            #textarea_linenumbers_text {
+                position:           absolute;
+                top:                20px;
+                left:               45px;
+                width:              30px;
+                height:             760px;
+                font-family:        "Courier New", Courier, monospace;
+                border:             1px solid #EFEFEF;
+            }
+            #textarea_text {
+                position:           absolute;
+                top:                20px;
+                left:               110px;
+                width:              1080px;
+                height:             760px;
+                border:             1px solid #EFEFEF;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="textarea">
+            <div id="textarea_linenumbers">
+                <div id="textarea_linenumbers_text"></div>
+                <div id="textarea_linenumbers_lightblue"></div>
+            </div>
+            <div id="textarea_text"></div>
+        </div>
+    </body>
+</html>
